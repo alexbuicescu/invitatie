@@ -2,7 +2,7 @@
 <html>
 <title>Invitatie Nunta</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <style>
@@ -121,13 +121,19 @@ Reusita petrecerii va fi deplina daca ne veti onora cu prezenta
 
 
 
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFyZX_Y3wVHZGFLkhjl6-4nTWIO7qELu0callback=initMap"></script>
 
 <script>
+function initMap(){
 // Google Map Location
 var myCenterRestaurant = new google.maps.LatLng(44.440531, 26.148270);
 
 var myCenterCununie = new google.maps.LatLng(44.441606, 26.009014);
+
+google.maps.event.addDomListener(window, 'load', initialize.bind(this, myCenterRestaurant, "googleMapRestaurant"));
+
+google.maps.event.addDomListener(window, 'load', initialize.bind(this, myCenterCununie, "googleMapCununie"));
+}
 
 function initialize(center, id) {
 var mapProp = {
@@ -146,12 +152,6 @@ var markerRestaurant = new google.maps.Marker({
 
 markerRestaurant.setMap(mapRestaurant);
 }
-
-google.maps.event.addDomListener(window, 'load', initialize.bind(this, myCenterRestaurant, "googleMapRestaurant"));
-
-google.maps.event.addDomListener(window, 'load', initialize.bind(this, myCenterCununie, "googleMapCununie"));
-
-
 </script>
 
 
